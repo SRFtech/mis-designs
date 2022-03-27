@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Registration SRF-MIS</title>
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="sb-topnav navbar navbar-expand navbar-light bg-light">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="index.html">
+            <img src="/assets/img/logo.png" />
+        </a>
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+                class="fas fa-bars"></i></button>
+        <!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+            <div class="input-group">
+                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..."
+                    aria-describedby="btnNavbarSearch" />
+                <button class="btn btn-success" id="btnNavbarSearch" type="button"><i
+                        class="fas fa-search"></i></button>
+            </div>
+        </form>
+        <!-- Navbar-->
+        <ul class="navbar-nav ml-auto nav-flex-icons">
+            <li class="nav-item avatar dropdown">
+                <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-5" role="button"
+                    data-bs-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <span class="badge badge-danger ml-2">4</span>
+                    <i class="fas fa-bell"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end dropdown-secondary"
+                    aria-labelledby="navbarDropdownMenuLink-5">
+                    <a class="dropdown-item waves-effect waves-light" href="#">Messages <span
+                            class="badge badge-danger ml-2">4</span></a>
+                    <a class="dropdown-item waves-effect waves-light" href="#">Counselling sessions due<span
+                            class="badge badge-danger ml-2">1</span></a>
+                    <a class="dropdown-item waves-effect waves-light" href="#">Home visits due <span
+                            class="badge badge-danger ml-2">4</span></a>
+                </div>
+            </li>
+        </ul>
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#!">Settings</a></li>
+                    <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                    <li>
+                        <hr class="dropdown-divider" />
+                    </li>
+                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <!-- Sidenav -->
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Core</div>
+                        <a class="nav-link" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Dashboard
+                        </a>
+                        <div class="sb-sidenav-menu-heading">Interface</div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
+                            aria-expanded="false" aria-controls="collapsePages">
+                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                            Pages
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
+                            data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                                    data-bs-target="#pagesCollapseAuth" aria-expanded="false"
+                                    aria-controls="pagesCollapseAuth">
+                                    Authentication
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne"
+                                    data-bs-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="login.html">Login</a>
+                                        <a class="nav-link" href="register.html">Register</a>
+                                        <a class="nav-link" href="password.html">Forgot Password</a>
+                                    </nav>
+                                </div>
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                                    data-bs-target="#pagesCollapseError" aria-expanded="false"
+                                    aria-controls="pagesCollapseError">
+                                    Forms
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne"
+                                    data-bs-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="registration.html">Registration</a>
+                                        <a class="nav-link" href="player-profile.html">Player profile</a>
+                                        <!-- <a class="nav-link" href="rugby.html">Rugby</a>
+                                            <a class="nav-link" href="education.html">Education</a>
+                                            <a class="nav-link" href="life-skills.html">Life Skills</a>
+                                            <a class="nav-link" href="counselling.html">Counselling</a>
+                                            <a class="nav-link" href="home-visits.html">Home Visits</a> -->
+                                    </nav>
+                                </div>
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                                    data-bs-target="#pagesCollapseError" aria-expanded="false"
+                                    aria-controls="pagesCollapseError">
+                                    Error
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="pagesCollapseError17" aria-labelledby="headingOne"
+                                    data-bs-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="401.html">401 Page</a>
+                                        <a class="nav-link" href="404.html">404 Page</a>
+                                        <a class="nav-link" href="500.html">500 Page</a>
+                                    </nav>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="sb-sidenav-menu-heading">Data View Options</div>
+                        <a class="nav-link" href="charts.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            Charts
+                        </a>
+                        <a class="nav-link" href="tables.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                            Tables
+                        </a>
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer">
+                    <div class="small">Logged in as:</div>
+                    Admin
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4">Home Visits</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Family Assessment Form</li>
+                    </ol>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <p class="mb-0">
+                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-bio-data-tab" data-toggle="pill"
+                                        href="registration.html" role="tab" aria-controls="pills-bio-data"
+                                        aria-selected="false">Bio Data</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="pills-visits-tab" data-toggle="pill"
+                                        href="home-visits.html" role="tab" aria-controls="pills-home-visits"
+                                        aria-selected="true">Home Visits</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-rugby-tab" data-toggle="pill" href="rugby.html"
+                                        role="tab" aria-controls="pills-rugby" aria-selected="false">Rugby</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-education-tab" data-toggle="pill"
+                                        href="education.html" role="tab" aria-controls="pills-education"
+                                        aria-selected="false">Education</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="life-skills.html-tab" data-toggle="pill"
+                                        href="life-skills.html" role="tab" aria-controls="life-skills.html"
+                                        aria-selected="false">Life Skills</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-counselling-tab" data-toggle="pill"
+                                        href="counselling.html" role="tab" aria-controls="pills-counselling"
+                                        aria-selected="false">Counselling</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="class8-visits-tab" data-toggle="pill"
+                                        href="class8-visits.html" role="tab" aria-controls="class8-visits"
+                                        aria-selected="false">Class 8 Visits</a>
+                                </li>
+                            </ul>
+                            </p>
+                        </div>
+                    </div>
+    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="row pb-2 pt-2 justify-content-center align-items-center">
+                                <div class="col-xl-3 col-sm-6">
+                                    <div class="card bg-success text-white mb-2">
+                                        <div
+                                            class=" image d-flex flex-column justify-content-center align-items-center">
+                                            <div class="card-body bg-success">Beneficiary K_234</div>
+                                            <div class="card-body col-md-6 mb-4">
+                                                <img class="rounded-circle" alt="girl photo"
+                                                    src="/assets/img/girl-profile.png" />
+                                            </div>
+                                            <div class="card-footer bg-success mb-2">
+                                                <div class="small text-white" href="#">
+                                                    Name : (from Reg) <br>
+                                                    Age : (from Reg) <br>
+                                                    DOB : (from Reg) <br>
+                                                    School Details : (from Reg) <br>
+                                                    Caregiver : (from Reg) <br>
+                                                    Medical Conditions : (from Reg) <br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    </div>
+                <form>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="form">
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="form-group row">
+                                        <label for="date" class="col-sm-2 col-form-label">Date</label>
+                                        <div class="col-sm-4">
+                                            <input type="date" class="form-control" id="date" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                                <h2 class="mt-4">Beneficiaries who are SRF members</h2>
+                                <div class="form-group pb-2">
+                                    <label for="formControlInput1">Name</label>
+                                    <input type="name" class="form-control" id="formControlInput1"
+                                        placeholder="Name">
+                                </div>
+                                <div class="form-group pb-2">
+                                    <label for="formControlInput2">Date of Birth</label>
+                                    <input type="number" class="form-control" id="formControlInput2"
+                                        placeholder="Date of Birth">
+                                </div>
+                                <div class="form-group pb-2">
+                                    <label for="formControlInput3">School</label>
+                                    <input type="text" class="form-control" id="formControlInput3"
+                                        placeholder="School">
+                                </div>
+                                <div class="form-group pb-2">
+                                    <label for="formControlInput8">Class</label>
+                                    <input type="text" class="form-control" id="formControlInput8"
+                                        placeholder="Class/Grade/Form ">
+                                </div>
+                                <div class="form-group pb-2">
+                                    <label for="formControlInput4">Year</label>
+                                    <input type="number" class="form-control" id="formControlInput4"
+                                        placeholder="Year of Entry">
+                                </div>
+                                <div class="form-group">
+                                    <label for="formControlSelect1">Membership Status</label>
+                                    <select class="form-control" id="formControlSelect1">
+                                        <option>Active</option>
+                                        <option>Inactive</option>
+                                    </select>
+                                </div>
+                                <div class="form-group row pt-2">
+                                    <div class="col-sm-4">
+                                        <button type="submit" class="btn btn-success">+ Add Beneficiary</button>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2>Household demography</h2>
+                            <div class="form-group pb-4">
+                                <label for="formControlSelect2">What is the relationship of the caregiver to the
+                                    beneficiary?</label>
+                                <select class="form-control" id="formControlSelect2">
+                                    <option>Father</option>
+                                    <option>Mother</option>
+                                    <option>Guardian</option>
+                                </select>
+                            </div>
+                            <div class="form-group pb-4">
+                                <label for="formControlSelect3">What is the marital status of the care giver?</label>
+                                <select class="form-control" id="formControlSelect3">
+                                    <option>Married</option>
+                                    <option>Widowed</option>
+                                    <option>Separated</option>
+                                    <option>Divorced</option>
+                                    <option>Single</option>
+                                </select>
+                            </div>
+                            <div class="form-group pb-4">
+                                <label for="formControlSelect4">Incase of a deceased spouse (select the necessary) What is the deceased relationship of the deceased to the
+                                    family</label>
+                                <select class="form-control" id="formControlSelect4">
+                                    <option>Father</option>
+                                    <option>Mother</option>
+                                    <option>Guardian</option>
+                                </select>
+                            <div class="form-group pb-4">
+                                    <label for="formControlInput5">Year of death</label>
+                                    <input type="month" class="form-control" id="formControlInput6" placeholder="Year of Death">
+                            </div>
+                                <label for="formControlSelect5">Main cause of death</label>
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="exampleFormControlTextarea14" rows="1"></textarea>
+                                    </div>
+                                <div class="form-group pb-4">
+                                    <label for="formControlSelect5">Documentation of Death</label>
+                                    <select class="form-control" id="formControlSelect5">
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                    <label for="formControlSelect5">If NO explain why</label>
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="exampleFormControlTextarea14" rows="2">
+                                        </textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group pb-4">
+                                <label for="formControlSelect4">Incase of separation / divorce ( tick where necessary )</label>
+                                    <label for="formControlInput5">Year of separation</label>
+                                    <input type="month" class="form-control" id="formControlInput6"
+                                        placeholder="Year of Death">
+                                </div>
+                                <label for="formControlSelect5">Cause of separation</label>
+                                    <div class="form-group pb-4">
+                                        <textarea class="form-control" id="exampleFormControlTextarea14" rows="1"></textarea>
+                                    </div> 
+                                <label for="formControlSelect4">Type of Household</label>
+                                    <select class="form-control" id="formControlSelect4">
+                                        <option>Nuclear</option>
+                                        <option>Extended</option>
+                                        <option>Cohabiting</option>
+                                    </select>
+                                <div class="form-group pt-2">
+                                    <label for="formControlSelect4">Total number of members residing in the household this includes parents/ children & relatives</label>
+                                    <input type="number" class="form-control" id="formControlInput1"
+                                        placeholder="Number of family members">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2>Household & Community relations</h2>
+                            <div class="form-group pb-2 pt-4">
+                                <label for="formControlInput1">County of residence</label>
+                                <input type="name" class="form-control" id="formControlInput1"
+                                    placeholder="Name of County">
+                            </div>
+                            <div class="form-group pb-2">
+                                <label for="formControlInput1">Area of residence</label>
+                                <input type="name" class="form-control" id="formControlInput1"
+                                    placeholder="Name of Residential Area">
+                            </div>
+                            <div class="form-group pb-2">
+                                <label for="formControlInput1">Number of years</label>
+                                <input type="number" class="form-control" id="formControlInput1"
+                                    placeholder="No of years living at current residential area">
+                            </div>
+                            <div class="form-group pb-2 pt-4">
+                                <label for="exampleFormControlTextarea14">Type and condition of family home ( Anaylze based on construction material & no. of rooms)</label>
+                                <label for="formControlInput5">Based on construction material</label>
+                                <select class="form-control" id="exampleFormControlSelect2">
+                                    <option>Temporary</option>
+                                    <option>Permanent</option>
+                                    <option>Semi-permanent</option>
+                                </select>
+                                <label for="formControlInput5">Based on number of rooms</label>
+                                <select class="form-control" id="exampleFormControlSelect2">
+                                    <option>Single room</option>
+                                    <option>Double room</option>
+                                    <option>One bedroom and above</option>
+                                </select>
+                            </div>
+                            <div class="form-group pt-4">
+                                <label for="exampleFormControlTextarea14">Does this family possess the following services/ assets (Tick where necessary)</label>
+                                <div>
+                                    <input type="checkbox" id="bed-mattress" name="bed-mattress">
+                                    <label for="bed-mattress">Bed & Mattress</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="beddings" name="beddings">
+                                    <label for="beddings">Beddings</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="furniture" name="furniture">
+                                    <label for="furniture">Furniture</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="electricity" name="electricity">
+                                    <label for="electricity">Electricity</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="television" name="television">
+                                    <label for="television">Television</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="radio" name="radio">
+                                    <label for="radio">Radio</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="stove" name="stove">
+                                    <label for="stove">Stove</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="gas-cooker" name="gas-cooker">
+                                    <label for="gas-cooker">Gas cooker</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="fridge" name="fridge">
+                                    <label for="fridge">Fridge</label>
+                                </div>
+                            </div>
+                            <div class="form-group pb-2 pt-4">
+                                <label for="exampleFormControlTextarea14">Where do the children sleep please explain in details?</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea14" rows="6"></textarea>
+                                <label for="formControlInput5">Availability of tapped water supply</label>
+                                <select class="form-control" id="exampleFormControlSelect2">
+                                    <option>Yes</option>
+                                    <option>No</option>
+                                </select>
+                                <label for="formControlInput5">Availability of Toilet</label>
+                                <select class="form-control" id="exampleFormControlSelect2">
+                                    <option>Yes</option>
+                                    <option>No</option>
+                                </select>
+                                <label for="formControlInput5">What is the condition of the surrounding environment</label>
+                                <select class="form-control" id="exampleFormControlSelect2">
+                                    <option>Well maintained</option>
+                                    <option>Presence of garbage</option>
+                                    <option>Presence of open sewage & drains</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2>Family Earners & Financial Expenditure</h2>
+                            <div class="form-group pb-2">
+                                    <label for="exampleFormControlTextarea14">How much does the family spend on the following needs either on a (daily/monthly basis)</label>
+                                    <label for="formControlInput1">Daily Food</label>
+                                    <input type="number" class="form-control" id="formControlInput1"
+                                        placeholder="Amount in Ksh">
+                                    <label for="formControlInput1">Rent</label>
+                                    <input type="number" class="form-control" id="formControlInput1"
+                                        placeholder="Amount in Ksh">
+                                    <label for="formControlInput1">Electricity</label>
+                                    <input type="number" class="form-control" id="formControlInput1"
+                                    placeholder="Amount in Ksh">
+                                    <label for="formControlInput1">Water</label>
+                                    <input type="number" class="form-control" id="formControlInput1"
+                                        placeholder="Amount in Ksh">
+                                    <label for="formControlInput1">Toilet</label>
+                                    <input type="number" class="form-control" id="formControlInput1"
+                                        placeholder="Amount in Ksh">
+                                    <label for="formControlInput1">Medical Treatment</label>
+                                    <input type="number" class="form-control" id="formControlInput1"
+                                        placeholder="Amount in Ksh">
+                            </div>
+                            <div class="form-group pb-2 pt-4">
+                                <label for="exampleFormControlTextarea14">List of contributors responsible of providing for the family needs
+                                </label>
+                                <div class="form-group pb-2">
+                                    <label for="formControlInput3">Role in the family</label>
+                                    <input type="text" class="form-control" id="formControlInput3">
+                                </div>
+                                <div class="form-group pb-2">
+                                    <label for="formControlInput8">Type of work </label>
+                                    <input type="text" class="form-control" id="formControlInput8">
+                                </div>
+                                <div class="form-group pb-2">
+                                    <label for="formControlInput4">Nature of employment. Casual </label>
+                                    <input type="number" class="form-control" id="formControlInput4">
+                                </div>
+                                <div class="form-group pb-2">
+                                    <label for="formControlInput4">Income per day/week/month</label>
+                                    <input type="number" class="form-control" id="formControlInput4">
+                                </div>
+                                <div class="form-group row pt-2 pb-4">
+                                    <div class="col-sm-4">
+                                        <button type="submit" class="btn btn-success">+ Add Contributor</button>
+                                    </div>
+                                </div>
+                                <div class="form-group pt-4">
+                                    <label for="exampleFormControlTextarea14">Note any other additional skills of the family earners</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea14" rows="6"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group pt-4">
+                                <label for="exampleFormControlTextarea14">When the family is in need, where do they go for help</label>
+                                <div>
+                                    <input type="checkbox" id="family-members" name="family-members">
+                                    <label for="family-members">Family members</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="mosque-church" name="mosque-church">
+                                    <label for="mosque-church">Mosque/Church</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="sacco" name="sacco">
+                                    <label for="sacco">Sacco</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="chamas" name="chamas">
+                                    <label for="chamas">Chamas</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="banks" name="banks">
+                                    <label for="banks">Banks</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="chief-camp" name="chief-camp">
+                                    <label for="chief-camp">Chief Camps</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="none" name="none">
+                                    <label for="none">None</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2>Physical Health</h2>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea14">List the family members with medical conditions including
+                                    allergies and disabilities</label>
+                                    <div class="form-group pb-2">
+                                        <label for="formControlInput3">Name of the family member</label>
+                                        <input type="text" class="form-control" id="formControlInput3">
+                                    </div>
+                                    <div class="form-group pb-2">
+                                        <label for="formControlInput8">Relationship to the (hh)</label>
+                                        <input type="text" class="form-control" id="formControlInput8">
+                                    </div>
+                                    <div class="form-group pb-2">
+                                        <label for="formControlInput4">Medical Concern</label>
+                                        <input type="number" class="form-control" id="formControlInput4">
+                                    </div>
+                                    <div class="form-group pb-2">
+                                        <label for="formControlInput4">Treatment Status</label>
+                                        <input type="number" class="form-control" id="formControlInput4">
+                                    </div>
+                                    <div class="form-group row pt-2 pb-4">
+                                        <div class="col-sm-4">
+                                            <button type="submit" class="btn btn-success">+ Add Family member</button>
+                                        </div>
+                                    </div>
+                                <div class="form-group pt-4">
+                                    <label for="exampleFormControlTextarea14">Does the family have a medical cover? (NHIF) (If No kindly advise on the importance of it)</label>
+                                    <select class="form-control" id="exampleFormControlSelect2">
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                    <label for="exampleFormControlTextarea14"><strong>No kindly advise on the importance of it.</strong></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2>Physical Health</h2>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea14">List the family members with medical conditions including
+                                    allergies and disabilities</label>
+                                    <div class="form-group pb-2">
+                                        <label for="formControlInput3">Name of the family member</label>
+                                        <input type="text" class="form-control" id="formControlInput3">
+                                    </div>
+                                    <div class="form-group pb-2">
+                                        <label for="formControlInput8">Relationship to the (hh)</label>
+                                        <input type="text" class="form-control" id="formControlInput8">
+                                    </div>
+                                    <div class="form-group pb-2">
+                                        <label for="formControlInput4">Medical Concern</label>
+                                        <input type="number" class="form-control" id="formControlInput4">
+                                    </div>
+                                    <div class="form-group pb-2">
+                                        <label for="formControlInput4">Treatment Status</label>
+                                        <input type="number" class="form-control" id="formControlInput4">
+                                    </div>
+                                    <div class="form-group row pt-2 pb-4">
+                                        <div class="col-sm-4">
+                                            <button type="submit" class="btn btn-success">+ Add Family member</button>
+                                        </div>
+                                    </div>
+                                <div class="form-group pt-4">
+                                    <label for="exampleFormControlTextarea14">Does the family have a medical cover? (NHIF) (If No kindly advise on the importance of it)</label>
+                                    <select class="form-control" id="exampleFormControlSelect2">
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                    <label for="exampleFormControlTextarea14"><strong>No kindly advise on the importance of it.</strong></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2>Physical Health</h2>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea14">List the family members with medical conditions including
+                                    allergies and disabilities</label>
+                                    <div class="form-group pb-2">
+                                        <label for="formControlInput3">Name of the family member</label>
+                                        <input type="text" class="form-control" id="formControlInput3">
+                                    </div>
+                                    <div class="form-group pb-2">
+                                        <label for="formControlInput8">Relationship to the (hh)</label>
+                                        <input type="text" class="form-control" id="formControlInput8">
+                                    </div>
+                                    <div class="form-group pb-2">
+                                        <label for="formControlInput4">Medical Concern</label>
+                                        <input type="number" class="form-control" id="formControlInput4">
+                                    </div>
+                                    <div class="form-group pb-2">
+                                        <label for="formControlInput4">Treatment Status</label>
+                                        <input type="number" class="form-control" id="formControlInput4">
+                                    </div>
+                                    <div class="form-group row pt-2 pb-4">
+                                        <div class="col-sm-4">
+                                            <button type="submit" class="btn btn-success">+ Add Family member</button>
+                                        </div>
+                                    </div>
+                                <div class="form-group pt-4">
+                                    <label for="exampleFormControlTextarea14">Does the family have a medical cover? (NHIF) (If No kindly advise on the importance of it)</label>
+                                    <select class="form-control" id="exampleFormControlSelect2">
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                    <label for="exampleFormControlTextarea14"><strong>No kindly advise on the importance of it.</strong></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2>Physical Health</h2>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea14">List the family members with medical conditions including
+                                    allergies and disabilities</label>
+                                    <div class="form-group pb-2">
+                                        <label for="formControlInput3">Name of the family member</label>
+                                        <input type="text" class="form-control" id="formControlInput3">
+                                    </div>
+                                    <div class="form-group pb-2">
+                                        <label for="formControlInput8">Relationship to the (hh)</label>
+                                        <input type="text" class="form-control" id="formControlInput8">
+                                    </div>
+                                    <div class="form-group pb-2">
+                                        <label for="formControlInput4">Medical Concern</label>
+                                        <input type="number" class="form-control" id="formControlInput4">
+                                    </div>
+                                    <div class="form-group pb-2">
+                                        <label for="formControlInput4">Treatment Status</label>
+                                        <input type="number" class="form-control" id="formControlInput4">
+                                    </div>
+                                    <div class="form-group row pt-2 pb-4">
+                                        <div class="col-sm-4">
+                                            <button type="submit" class="btn btn-success">+ Add Family member</button>
+                                        </div>
+                                    </div>
+                                <div class="form-group pt-4">
+                                    <label for="exampleFormControlTextarea14">Does the family have a medical cover? (NHIF) (If No kindly advise on the importance of it)</label>
+                                    <select class="form-control" id="exampleFormControlSelect2">
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                    <label for="exampleFormControlTextarea14"><strong>No kindly advise on the importance of it.</strong></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2>Physical Health</h2>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea14">List the family members with medical conditions including
+                                    allergies and disabilities</label>
+                                    <div class="form-group pb-2">
+                                        <label for="formControlInput3">Name of the family member</label>
+                                        <input type="text" class="form-control" id="formControlInput3">
+                                    </div>
+                                    <div class="form-group pb-2">
+                                        <label for="formControlInput8">Relationship to the (hh)</label>
+                                        <input type="text" class="form-control" id="formControlInput8">
+                                    </div>
+                                    <div class="form-group pb-2">
+                                        <label for="formControlInput4">Medical Concern</label>
+                                        <input type="number" class="form-control" id="formControlInput4">
+                                    </div>
+                                    <div class="form-group pb-2">
+                                        <label for="formControlInput4">Treatment Status</label>
+                                        <input type="number" class="form-control" id="formControlInput4">
+                                    </div>
+                                    <div class="form-group row pt-2 pb-4">
+                                        <div class="col-sm-4">
+                                            <button type="submit" class="btn btn-success">+ Add Family member</button>
+                                        </div>
+                                    </div>
+                                <div class="form-group pt-4">
+                                    <label for="exampleFormControlTextarea14">Does the family have a medical cover? (NHIF) (If No kindly advise on the importance of it)</label>
+                                    <select class="form-control" id="exampleFormControlSelect2">
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                    <label for="exampleFormControlTextarea14"><strong>No kindly advise on the importance of it.</strong></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="card mb-4">
+                        <div class="card-body">
+                            <h2>Child safety within the family setup</h2>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea14">Do you or anyone in your (hh) use alcohol or abuse any drug substance?</label>
+                                <select class="form-control" id="exampleFormControlSelect2">
+                                    <option>NO</option>
+                                    <option>YES</option>
+                                </select>
+                                <div class="form-group pt-4">
+                                        <label for="exampleFormControlTextarea14">If YES, Which member of the family abuses these substance?</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea14" rows="2"
+                                            ></textarea>
+                                            <br>
+                                        <label for="exampleFormControlTextarea14">Which substance/s do they commonly use?</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea14" rows="2"
+                                            ></textarea>
+                                            <br>
+                                        <label for="exampleFormControlTextarea14">For how long have he/she been using the substance/s?</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea14" rows="2"
+                                            ></textarea>
+                                            <br>
+                                        <label for="exampleFormControlTextarea14">As a concerned parent which actions do you take concerning the above behavior/reactions/traits?</label>
+                                        <div>
+                                            <input type="checkbox" id="silence" name="silence">
+                                            <label for="silence">I keep silent and assume nothing happenss</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="fight-back" name="fight-back">
+                                            <label for="fight-back">I react and fight back most of the time (quarrel)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="police" name="police">
+                                            <label for="police">I report him/her to the police</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="church" name="church">
+                                            <label for="church">I report him/her to the church/ village leaders</label>
+                                        </div>
+                                </div>
+                                <div class="form-group pt-4">
+                                    <label for="exampleFormControlTextarea14">In general how is the family relationship?</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea14" rows="6"></textarea>
+                                </div>
+                        </div>
+                    </div>
+                
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2>Child safety within the community</h2>
+                            <div class="form-group pt-4">
+                                <label for="exampleFormControlTextarea14">What are some of the behaviors/concerns that you have observed in your community that would affect the well-being /welfare of your child/children? (please list them)</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea14" rows="12"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea14">Has any of your child/family members have a history of any of the above child abuse cases?</label>
+                                <select class="form-control" id="exampleFormControlSelect2">
+                                    <option>NO</option>
+                                    <option>YES</option>
+                                </select>
+                                <div class="form-group pt-4">
+                                    <label for="exampleFormControlTextarea14">Write a brief summary on the family
+                                        including any other additional observations</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea14" rows="6"
+                                        placeholder="If NO, kindly give us the reason as to why?"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2>Caregiver Consent</h2>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea14">As the concerned caregiver, do you prefer your
+                                    child/children being involved in SRF programs? </label>
+                                <select class="form-control" id="exampleFormControlSelect2">
+                                    <option>NO</option>
+                                    <option>YES</option>
+                                </select>
+                                <div class="form-group pt-4">
+                                    <label for="exampleFormControlTextarea14">Write a brief summary on the family
+                                        including any other additional observations</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea14" rows="6"
+                                        placeholder="If NO, kindly give us the reason as to why?"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2>Social Worker Summary</h2>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea14">Write a brief summary on the family including
+                                    any other additional observations</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea14" rows="6"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea14">Capture the burden of care including the
+                                    various needs/conditions of the family as observed</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea14" rows="6"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea14">Scale the family and to give the necessary
+                                    recommendations</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea14" rows="6"></textarea>
+                            </div>
+                            <div class="form-group row pt-2 pb-4">
+                                <div class="col-sm-10">
+                                    <button type="submit" class="btn btn-success ">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </form>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; SRF 2022</div>
+                        <div>
+                            <a href="#">Privacy Policy</a>
+                            &middot;
+                            <a href="#">Terms &amp; Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
