@@ -1,0 +1,95 @@
+{
+  "players": [
+    {
+        "id": "1",
+        "name": "Jeff Kilonzo",
+      "createdAt": "2022/1/20",
+      "birthDate": "2002/12/20",
+      "gender": "male",
+      "medicalCondition": "Stomach Ulcers",
+      "caregivers": [
+        {
+          "role": "Mother",
+          "name": "Maria Kilonzo",
+          "phoneNumber": "254722678799"
+        },
+        {
+          "role": "Father",
+          "name": "Johnston Kilonzo",
+          "phoneNumber": "254721777998"
+        }
+      ],
+      "srfProfile": {
+        "startDate": "2010/1/3",
+        "endDate": null,
+        "clinic": "Mathare",
+        "team": "Under 16s",
+        "consent": "Yes"
+      },
+      "Sessions": [
+        {
+          "session_type_id": "object_uid",
+          "sessionDate": "2012/10/1",
+          "session_name": "School Visit",
+          "sessionLocation": "Eastlands"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Stacy Kilonzo",
+      "createdAt": "2022/1/20",
+      "updatedAt": "2022/04/20",
+      "birthDate": "2012/12/20",
+      "gender": "female",
+      "medicalCondition": "None",
+      "caregivers": [
+        {
+          "id": "object_uid",
+          "role": "Mother",
+          "name": "Maria Kilonzo",
+          "phoneNumber": "254722678799"
+        },
+        {
+          "id": "object_uid",
+          "role": "Father",
+          "name": "Johnston Kilonzo",
+          "phoneNumber": "254721777998"
+        }
+      ],
+      "srfProfile": {
+        "profile_id": "object_uid",
+        "startDate": "2020/11/3",
+        "endDate": null,
+        "clinic": "Mathare",
+        "team": "Under 16s",
+        "consent": "Yes"
+      },
+      "Sessions": [
+        {
+          "session_id": "object_uid",
+          "session_type_id": "object_uid",
+          "sessionDate": "2012/10/1",
+          "session_name": "Weekend Session",
+          "sessionLocation": "Eastlands"
+        }
+      ]
+    },
+    {
+      "createdAt": "2022-04-24",
+      "name": "Nelly Onyango",
+      "birthDate": "2004-11-09",
+      "gender": "Female",
+      "medicalCondition": "Asthmatic - Needs inhaler once a day. ",
+      "id": "RlHiKl_"
+    },
+    {
+      "createdAt": "2022-04-23",
+      "name": "James Mwanzia",
+      "birthDate": "2010-02-12",
+      "gender": "Male",
+      "medicalCondition": "None",
+      "id": "8xF6EIm"
+    }
+  ]
+}
